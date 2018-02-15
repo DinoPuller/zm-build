@@ -1,7 +1,7 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 if [ "$1" == '-r' ]; then
-    echo "Reverting fix for bug 107925 and 108265"
+    echo "Reverting fix for bug 107925, 108265 and 108786"
     cp -f backup_files/ZmMailListController.js /opt/zimbra/jetty/webapps/zimbra/js/zimbraMail/mail/controller/ZmMailListController.js
     chown zimbra.zimbra /opt/zimbra/jetty/webapps/zimbra/js/zimbraMail/mail/controller/ZmMailListController.js
     chmod 664 /opt/zimbra/jetty/webapps/zimbra/js/zimbraMail/mail/controller/ZmMailListController.js
@@ -39,7 +39,7 @@ if [ "$1" == '-r' ]; then
     echo "Reverted the patch. Please restart the mailbox. "
 elif [ "$1" == '-h' ]; then
     echo "Usage: ./install_patch.sh [OPTION]"
-    echo "./install_patch.sh install patch for bug 107925 and 108265 on 8.7.11 GA"
+    echo "./install_patch.sh install patch for bug 107925, 108265 and 108786 on 8.7.11 GA"
     echo "-r  revert the patch."
 else
     echo "Backing up ...."
@@ -52,7 +52,7 @@ else
     cp -f /opt/zimbra/jetty/webapps/zimbra/js/NewWindow_2_all.js backup_files/
     cp -f /opt/zimbra/jetty/webapps/zimbra/js/Tasks_all.js.zgz backup_files/
     cp -f /opt/zimbra/jetty/webapps/zimbra/js/Tasks_all.js backup_files/
-    echo "Installing Fix for Bug 107925 and 108265"
+    echo "Installing Fix for bug 107925, 108265 and 108786"
 
     cp -f patched_files/ZmMailListController.js /opt/zimbra/jetty/webapps/zimbra/js/zimbraMail/mail/controller/ZmMailListController.js
     chown zimbra.zimbra /opt/zimbra/jetty/webapps/zimbra/js/zimbraMail/mail/controller/ZmMailListController.js
