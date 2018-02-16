@@ -4,7 +4,6 @@ ZCS-4116 - Bug 108265 - Persistent XSS - message view as text [CWE-79]
 ZCS-4235 - Bug 108786 - Persistent XSS - content-location [CWE-79]
 
 Please re-check your ZCS version. This patch should only be applied on 8.7.11 GA.
-In case of any issues after patch, you can revert the changes by ./install_patch -r
 
 -------------  To Install the Patch -------------
 
@@ -26,9 +25,8 @@ zcs-patch-8.7.11_P1_GA_1855/README
 ------------- Install Patch Help -------------
 
 root@zqa-036:/tmp/zcs-patch-8.7.11_P1_GA_1855# ./install_patch.sh -h
-Usage: ./install_patch.sh [OPTION]
+Usage: ./install_patch.sh
 ./install_patch.sh install Patch for Bug 107925, 108265 and 108786 on 8.7.11 GA
--r  revert the patch.
 
 
 ------------- Install Patch -------------
@@ -40,17 +38,5 @@ Installing Fix for Bug 107925, 108265 and 108786
 Installation completed. Please restart the mailbox.
 
 root@zqa-036:/tmp/zcs-patch-8.7.11_P1_GA_1855# su - zimbra -c "zmmailboxdctl restart"
-Stopping mailboxd...done.
-Starting mailboxd...done.
-
-
-------------- Revert Patch (In case of any issue) -------------
-
-root@zqa-036:/tmp/zcs-patch-8.7.11_P1_GA_1855# ./install_patch.sh -r
-Reverting fix for Bug 107925, 108265 and 108786
-Reverted the patch. Please restart the mailbox.
-
-root@zqa-036:/tmp/zcs-patch-8.7.11_P1_GA_1855# su - zimbra
-zimbra@zqa-036:~$ zmmailboxdctl restart
 Stopping mailboxd...done.
 Starting mailboxd...done.
